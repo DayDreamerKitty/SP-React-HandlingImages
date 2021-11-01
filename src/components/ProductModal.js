@@ -26,6 +26,7 @@ function ProductModal({ oldProduct }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(product.image);
     if (oldProduct) productStore.updateProduct(product, oldProduct._id);
     else productStore.createProduct(product);
     handleClose();

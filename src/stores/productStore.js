@@ -33,11 +33,11 @@ class ProductStore {
     }
   };
 
-  updateProduct = async (updatedProduct, productId, newProduct) => {
+  updateProduct = async (updatedProduct, productId) => {
     try {
       const formData = new FormData();
-      for (const key in newProduct) {
-        formData.append(key, newProduct[key]);
+      for (const key in updatedProduct) {
+        formData.append(key, updatedProduct[key]);
       }
       const res = await instance.put(
         `/products/${productId}`,
